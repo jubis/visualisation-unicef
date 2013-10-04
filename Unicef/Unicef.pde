@@ -17,7 +17,7 @@ void drawMatilda() {
 }
 
 void drawLaura() {
-   image(map, 0, 0, 640, 305);
+   image(map, 0, 0, 800, 400);
 
 }
 
