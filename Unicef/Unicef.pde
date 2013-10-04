@@ -3,7 +3,7 @@ Point windowSize = new Point(800,600);
 
 void setup() {
   map = loadImage("map.jpg");
-  size(windowSize.x,windowsSize.y);
+  size((int)windowSize.x,(int)windowSize.y);
 }
 
 void draw() {
