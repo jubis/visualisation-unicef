@@ -23,12 +23,13 @@ void drawLaura() {
 }
 
 Cube cube = new Cube( 0, 0 );
+ClickableArea area = new ClickableArea();
 void drawMatias() {
-  
+  area.draw();
 }
 
 public void mouseClicked() {
-  println( cube.isClicked( mouse() ) );
+  println( area.isClicked( mouse() ) );
 }
 
 public Point mouse() {
