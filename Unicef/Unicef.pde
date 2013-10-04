@@ -1,5 +1,9 @@
+PImage map;
+map = loadImage("map.jpg");
+
 void setup() {
   size(800,600);
+  
 }
 
 void draw() {
@@ -13,6 +17,7 @@ void drawMatilda() {
 }
 
 void drawLaura() {
+   image(map, 0, 0, 640, 305);
 
 }
 
