@@ -19,17 +19,16 @@ void drawMatilda() {
 
 void drawLaura() {
    image(map, 0, 0, 800, 400);
-
 }
 
 Cube cube = new Cube( 0, 0 );
-ClickableArea area = new ClickableArea();
+ClickableArea area = new ClickableArea( new PrintJob( "testing :)" ) );
 void drawMatias() {
   area.draw();
 }
 
 public void mouseClicked() {
-  println( area.isClicked( mouse() ) );
+  area.click( mouse() );
 }
 
 public Point mouse() {
