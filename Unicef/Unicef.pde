@@ -13,7 +13,8 @@ void draw() {
 }
 
 void drawMatilda() {
-
+  InfoWindow infowindow = new InfoWindow();
+  infowindow.draw();
 }
 
 void drawLaura() {
