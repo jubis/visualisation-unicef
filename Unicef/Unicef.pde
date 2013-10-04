@@ -1,5 +1,6 @@
 PImage map;
 Point windowSize = new Point(800,600);
+Point imageSize = new Point( 1000, 600 );
 
 void setup() {
   map = loadImage("map.jpg");
@@ -7,18 +8,19 @@ void setup() {
 }
 
 void draw() {
-  drawMatilda();
+  image(map, 0, 0, imageSize.x, imageSize.y);
+  
   drawLaura();
   drawMatias();
+  drawMatilda();
 }
 
+InfoWindow infowindow = new InfoWindow(new Point(200,200),200,200);
 void drawMatilda() {
-  InfoWindow infowindow = new InfoWindow();
   infowindow.draw();
 }
 
 void drawLaura() {
-   image(map, 0, 0, 800, 400);
 
 }
 
