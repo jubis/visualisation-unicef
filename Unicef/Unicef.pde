@@ -22,6 +22,15 @@ void drawLaura() {
 
 }
 
+Cube cube = new Cube( 0, 0 );
 void drawMatias() {
+  
+}
 
+public void mouseClicked() {
+  println( cube.isClicked( mouse() ) );
+}
+
+public Point mouse() {
+  return new Point( mouseX, mouseY );
 }
