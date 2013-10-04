@@ -1,11 +1,14 @@
 class ClickableArea {
   ArrayList<Cube> cubes = new ArrayList<Cube>();
+  Job job;
   
-  public ClickableArea( ArrayList<Cube> cubes ) {
+  public ClickableArea( ArrayList<Cube> cubes, Job job ) {
     this.cubes = cubes;
+    this.job = job;
   }
   
-  public ClickableArea() {
+  public ClickableArea( Job job ) {
+    this( null, job );
     for( int i = 0; i < 10; i++ ) {
       for( int j = 0; j < 10; j++ ) {
         this.cubes.add( new Cube( i, j ) );
@@ -13,10 +16,11 @@ class ClickableArea {
     }
   }
   
-  public boolean isClicked( Point mouse ) {
+  public boolean click( Point mouse ) {
      for( Cube cube : this.cubes ) {
        if( cube.isClicked( mouse ) ) {
          return true;
+         this.job.run();
        }
      }
      return false;
