@@ -1,5 +1,7 @@
+Point windowSize = new Point(800,600);
+
 void setup() {
-  size(800,600);
+  size(windowSize.x,windowsSize.y);
 }
 
 void draw() {
