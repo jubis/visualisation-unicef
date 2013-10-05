@@ -5,7 +5,7 @@ class PrintJob extends Job {
     this.text = text;
   }
   
-  public void run() {
+  public void run( Object[] args ) {
     println( this.text );
   }
 

@@ -1,6 +1,8 @@
 PImage map;
 Point windowSize = new Point(800,600);
 Point imageSize = new Point( 1000, 600 );
+ArrayList<InfoWindow> windows = new ArrayList<InfoWindow>();
+ArrayList<ClickableArea> areas = new ArrayList<ClickableArea>();
 
 void setup() {
   map = loadImage("map.jpg");
@@ -9,6 +11,9 @@ void setup() {
 
 void draw() {
   image(map, 0, 0, imageSize.x, imageSize.y);
+  for( InfoWindow window: windows) {
+    window.draw();
+  }
   
   drawLaura();
   drawMatias();
@@ -24,7 +29,9 @@ void drawLaura() {
 }
 
 Cube cube = new Cube( 0, 0 );
-ClickableArea area = new ClickableArea( new PrintJob( "testing :)" ) );
+//areas.add( ClickableArea( new PrintJob( "testing :)" ) ) );
+ClickableArea area = new ClickableArea( new InfoWindowJob( new Point( 100, 100 ), windows ) );
+//areas.add( area );
 void drawMatias() {
   area.draw();
 }
