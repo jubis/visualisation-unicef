@@ -16,7 +16,6 @@ class InfoWindow {
   InfoWindow(Point clickedXY, int sizeX, int sizeY) {
     this.clickedX = clickedXY.x;
     this.clickedY = clickedXY.y;
-<<<<<<< HEAD
     this.heightOfWindow = sizeY;
     this.widthOfWindow = sizeX;
     this.heightOfTriangle = 0.25*this.heightOfWindow;
@@ -33,14 +32,6 @@ class InfoWindow {
       this.beginningOfRectangleY=this.clickedY;
       this.topCornerOfTriangleY = beginningOfRectangleY+(0.1*heightOfWindow);
     }
-=======
-    heightOfWindow = sizeY;
-    widthOfWindow = sizeX;
-    heightOfTriangle = 0.25*heightOfWindow;
-    widthOfTriangle = 0.15*widthOfWindow;
-    beginningOfRectangleX=clickedX+widthOfTriangle;
-    beginningOfRectangleY=clickedY-heightOfWindow;
->>>>>>> b9ee61aab0d4a5f8853eac70738d9b932073c3be
   }  
   
   void draw() {
