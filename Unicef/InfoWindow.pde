@@ -21,8 +21,6 @@ class InfoWindow {
     widthOfTriangle = 0.15*widthOfWindow;
     beginningOfRectangleX=clickedX+widthOfTriangle;
     beginningOfRectangleY=clickedY-heightOfWindow;
-    
-    println( "created" );
   }  
   
   void draw() {
