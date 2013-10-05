@@ -25,8 +25,8 @@ class InfoWindow {
   }  
   
   void draw() {
-    println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
-    println(beginningOfRectangleX + " | " + beginningOfRectangleY);
+    //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
+    //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
     rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
     triangle(this.clickedX,this.clickedY, beginningOfRectangleX, beginningOfRectangleY+(0.65*heightOfWindow), beginningOfRectangleX, beginningOfRectangleY+0.65*heightOfWindow+heightOfTriangle);
   }
