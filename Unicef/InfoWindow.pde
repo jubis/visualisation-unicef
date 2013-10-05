@@ -4,6 +4,7 @@ class InfoWindow {
   float widthOfWindow;
   float beginningOfRectangleX;
   float beginningOfRectangleY;
+  float topCornerOfTriangleY;
   float heightOfTriangle;
   float widthOfTriangle;
   float clickedX;
@@ -15,20 +16,29 @@ class InfoWindow {
   InfoWindow(Point clickedXY, int sizeX, int sizeY) {
     this.clickedX = clickedXY.x;
     this.clickedY = clickedXY.y;
-    heightOfWindow = sizeY;
-    widthOfWindow = sizeX;
-    heightOfTriangle = 0.25*heightOfWindow;
-    widthOfTriangle = 0.15*widthOfWindow;
-    beginningOfRectangleX=clickedX+widthOfTriangle;
-    beginningOfRectangleY=clickedY-heightOfWindow;
-    
+    this.heightOfWindow = sizeY;
+    this.widthOfWindow = sizeX;
+    this.heightOfTriangle = 0.25*this.heightOfWindow;
+    this.widthOfTriangle = 0.15*this.widthOfWindow;
+    this.beginningOfRectangleX=this.clickedX+this.widthOfTriangle;
+   
+   /** Checks if the infowindow's height is bigger than the x-coordinate clicked,
+   and if it is, it turns the triangle to be attached on the top left corner of the
+   box instead of the bottom left corner.*/
+    if(this.clickedY >= heightOfWindow) {
+      this.beginningOfRectangleY=this.clickedY-heightOfWindow;
+      this.topCornerOfTriangleY = beginningOfRectangleY+(0.65*heightOfWindow);
+    } else {
+      this.beginningOfRectangleY=this.clickedY;
+      this.topCornerOfTriangleY = beginningOfRectangleY+(0.1*heightOfWindow);
+    }
   }  
   
   void draw() {
     //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
     //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
     rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
-    triangle(this.clickedX,this.clickedY, beginningOfRectangleX, beginningOfRectangleY+(0.65*heightOfWindow), beginningOfRectangleX, beginningOfRectangleY+0.65*heightOfWindow+heightOfTriangle);
+    triangle(this.clickedX,this.clickedY, beginningOfRectangleX,this.topCornerOfTriangleY, beginningOfRectangleX, this.topCornerOfTriangleY+heightOfTriangle);
   }
   
   
