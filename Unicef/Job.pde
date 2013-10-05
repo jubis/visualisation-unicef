@@ -1,3 +1,3 @@
 abstract class Job {
-  public abstract void run();
+  public abstract void run( Object[] args );
 }
