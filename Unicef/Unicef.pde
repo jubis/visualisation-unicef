@@ -3,10 +3,18 @@ Point windowSize = new Point(800,600);
 Point imageSize = new Point( 1000, 600 );
 ArrayList<InfoWindow> windows = new ArrayList<InfoWindow>();
 ArrayList<ClickableArea> areas = new ArrayList<ClickableArea>();
+ArrayList<PieChart> pieCharts;
 
 void setup() {
   map = loadImage("map.jpg");
   size((int)windowSize.x,(int)windowSize.y);
+// Create an empty ArrayList
+pieCharts = new ArrayList<PieChart>();  
+// adding piecharts to the list
+pieCharts.add(new PieChart(percentages1)); 
+pieCharts.add(new PieChart(percentages2)); 
+pieCharts.add(new PieChart(percentages3)); 
+  
 }
 
 void draw() {
