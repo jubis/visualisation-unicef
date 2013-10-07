@@ -38,12 +38,12 @@ void drawLaura() {
   for(int i=0; i<pieCharts.size(); i++){
     
 //Ensimmäinen sektori
-arc(50, 50, 80, 80, 0, pieCharts[i].percentages[0], PIE);
+arc(50, 50, 80, 80, 0, pieCharts[i].sectors[0], PIE);
 
-for(int j=1; j<percentages.length(); j++){
+for(int j=1; j<sectors.length(); j++){
 //loput sektorit
-arc(50, 50, 80, 80, pieCharts[i].percentages[j-1],
-pieCharts[i].percentages[j-1] + pieCharts[i].percentages[j]);
+arc(50, 50, 80, 80, pieCharts[i].sectors[j-1],
+pieCharts[i].sectors[j-1] + pieCharts[i].sectors[j]);
       }
     }
 }
