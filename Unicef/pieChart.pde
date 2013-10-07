@@ -30,6 +30,7 @@ class PieChart {
     float startAngle = 0; 
     
       for(int i=0; i<sectors.length(); i++){
+        fill(i*60, i*50, i*60);
         arc(50, 50, 80, 80, startAngle, startAngle + this.sectors[i]*unit);
         startAngle += this.sectors[i]*unit;
       }
