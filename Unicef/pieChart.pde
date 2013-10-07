@@ -1,13 +1,36 @@
-class PieChart{
-  
-/*Create arrays; the values tell the percentage that each sector takes, so the donations
-spent to certain target.(International Unicef has five focuses: health, education, children welfare,
-children rights, hiv/aids)*/
-float[] sectors;
+class PieChart {
 
-public PieChart(float[] sectors){
-this.sectors = sectors;
+  float[] sectors;
+  float sum = 0;
+  float unit;
+
+  public PieChart(float[] sectors){
+    this.sectors = sectors;
   }
+  
+  public PieChart( int i ) {
+    switch(i) {
+      case 0: 
+        PieChart.this(new float[]{ 100, 300, 500 });
+        break; 
+        
+      for (int i=0; i<this.sectors.length; i++) {
+      sum += this.sectors[i]; 
+      }
+     unit = TWO_PI/(sum);
+    }  
+  }
+  
+  public draw(){
+    
+    float startAngle = 0; 
+    
+      for(int i=0; i<sectors.length(); i++){
+        arc(50, 50, 80, 80, startAngle, startAngle + this.sectors[i]*unit);
+        startAngle += this.sectors[i]*unit;
+      }
+   }
+}
 
 
 
