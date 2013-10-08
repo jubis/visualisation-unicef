@@ -24,7 +24,7 @@ void draw() {
     area.draw();
   }
   
-  drawLaura();
+ // drawLaura();
   drawMatias();
   drawMatilda();
 }
@@ -60,7 +60,7 @@ public Point mouse() {
 public void initCountries() {
   //country name...
   ArrayList<Cube> cubes = new ArrayList<Cube>();
-  cubes.add( new Cube(10,1) );
+  cubes.add( new Cube(141,70) );
   cubes.add( new Cube(11,1) );
   cubes.add( new Cube(12,1) );
   cubes.add( new Cube(13,1) );
