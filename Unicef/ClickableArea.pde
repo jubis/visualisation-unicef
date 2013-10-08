@@ -42,10 +42,14 @@ class Cube {
   Point tl;
   Point br;
   
-  public Cube( int x, int y, int times ) {
-    this.size = this.sizeOrig.multiply( times );
+  public Cube( int x, int y, int mX, int mY ) {
+    this.size = this.sizeOrig.multiply( new Point( mX, mY ) );
     this.tl = new Point( x*this.sizeOrig.x, y*this.sizeOrig.y );
     this.br = tl.plus( size );
+  }
+  
+  public Cube( int x, int y, int times ) {
+    this( x, y, times, times );
   }
   
   public Cube( int x, int y ) {

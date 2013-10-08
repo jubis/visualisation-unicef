@@ -54,6 +54,7 @@ class InfoWindow {
       //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
       //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
       fill(255,255,255);
+      stroke( 0 );
       rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
       triangle(this.clickedX,this.clickedY, topCornerOfTriangleX,this.topCornerOfTriangleY, topCornerOfTriangleX, this.topCornerOfTriangleY+heightOfTriangle);
     }
