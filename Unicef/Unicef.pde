@@ -13,6 +13,10 @@ void setup() {
  pieCharts.add(new PieChart(new float[]{700, 700, 400}, new String[]{"word1", "word2", "word3"}, 300, 30));
  
  initCountries();
+ 
+ InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), windows );
+ ClickableArea area = new ClickableArea( job );
+ areas.add( area );
 }
 
 void draw() {
@@ -40,17 +44,13 @@ void drawLaura() {
   }
 }
 
-Cube cube = new Cube( 0, 0 );
-//areas.add( ClickableArea( new PrintJob( "testing :)" ) ) );
-InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), windows );
-ClickableArea area = new ClickableArea( job );
-//areas.add( area );
 void drawMatias() {
-  area.draw();
 }
 
 public void mouseClicked() {
-  area.click( mouse() );
+  for( ClickableArea area : areas ) {
+    area.click( mouse() );
+  }
 }
 
 public Point mouse() {
@@ -72,8 +72,8 @@ public void initCountries() {
   cubes.add( new Cube(10,50) );
   cubes.add( new Cube(11,50) );
   cubes.add( new Cube(12,50) );
-  cubes.add( new Cube(13,50) );
-  cubes.add( new Cube(14,51,10) );
+  cubes.add( new Cube(13,50,3,8) );
+  cubes.add( new Cube(14,51,10,20) );
   cubes.add( new Cube(24,61,10) );
   areas.add( new ClickableArea( cubes, null ) );
 }
