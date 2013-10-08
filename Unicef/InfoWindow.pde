@@ -15,7 +15,7 @@ class InfoWindow {
  
   
   
-  InfoWindow(Point windowSize, Point clickedXY, int sizeX, int sizeY) {
+  InfoWindow(Point clickedXY, int sizeX, int sizeY) {
     this.widthOfMainWindow = windowSize.x;
     this.clickedX = clickedXY.x;
     this.clickedY = clickedXY.y;
@@ -34,7 +34,7 @@ class InfoWindow {
       this.beginningOfRectangleY=this.clickedY;
       this.topCornerOfTriangleY = beginningOfRectangleY+(0.1*heightOfWindow);
     }
-  }  
+  
   
   
   /** Checks if the infowindow fits inside the main window (x-coordinates) and turns
@@ -46,6 +46,7 @@ class InfoWindow {
     this.beginningOfRectangleX = this.clickedX+this.widthOfTriangle;
     this.topCornerOfTriangleX = this.beginningOfRectangleX;
   } 
+}
     
   
   void draw() {

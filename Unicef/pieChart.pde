@@ -13,17 +13,16 @@ class PieChart {
   }
   
   public PieChart( int i ) {
+    this();
     switch(i) {
-      case 0: 
-        PieChart.this(new float[]{ 100, 300, 500 }, 50, 50);
+      case 0: //new float[]{ 100, 300, 500 }, 50, 50);
         break; 
-        
+    }
       for (int i=0; i<this.sectors.length; i++) {
       sum += this.sectors[i]; 
       }
      unit = TWO_PI/(sum);
-    }  
-  }
+  }  
   
   public draw(){
     
