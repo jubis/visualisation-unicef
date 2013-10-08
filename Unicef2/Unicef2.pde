@@ -1,14 +1,18 @@
 import geomerative.*;
 import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
 
 Point windowSize = new Point( 1200, 600 );
 RShape s;
 RShape s2;
 RShape sea;
 RShape land;
-ArrayList<String> highlights = new ArrayList<String>();
-ArrayList<String> specials = new ArrayList<String>();
+List<String> highlights = new ArrayList<String>();
+List<String> specials = new ArrayList<String>();
 HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
+
+ArrayList<String> workList = new ArrayList<String>();
 
 void setup() {
   RG.init(this);
@@ -39,6 +43,9 @@ void draw() {
   
   stroke( 100, 100, 255 );
   for( RShape child : land.children ) {
+    
+
+    
     fill( 200 );
     if( highlights.contains( child.name ) ) {
       fill( 255, 255, 100 );
@@ -48,7 +55,10 @@ void draw() {
     }
     if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
       fill( 100, 255, 100 );
-      println( child.name );
+    }
+    
+    if( workList.contains( child.name ) ) {
+      fill( 255, 50, 50 );
     }
     
     RG.shape( child );
@@ -64,12 +74,28 @@ void mouseClicked() {
   for( String special : specials ) {
     if( land.getChild( special ).contains(new RPoint( mouseX, mouseY ) ) ) {
       windows.get( special ).toggleVisibility();
+      return;
     }
   }
+  for( RShape child : land.children ) {
+    if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
+      if( ! workList.contains( child.name ) ) {
+        workList.add( child.name );
+      }
+      else {
+        workList.remove( child.name );
+      }
+    } 
+  }
+  for( String land : workList ) {
+    print( "\"" + land + "\",");
+  }
+  println( "" );
 }
 
 void initHighs() {
-  highlights.add( "path8426" );
+  highlights = Arrays.asList( new String[] { "path10144","path11942","path8212","path12354" } );
+  //highlights.add( "path8426" );
 }
 
 void initSpecials() {
