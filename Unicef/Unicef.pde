@@ -58,19 +58,25 @@ public Point mouse() {
 }
 
 public void initCountries() {
-  //country name...
+  //India
   ArrayList<Cube> cubes = new ArrayList<Cube>();
   cubes.add( new Cube(139, 70, 3) );
   cubes.add( new Cube(140, 73, 2) );
+  cubes.add( new Cube(140, 75, 3, 20) );
+  cubes.add( new Cube(143, 77, 2, 30) );
+  cubes.add( new Cube(145, 80, 4, 9) );
+  cubes.add( new Cube(149, 82, 1, 6) );
+  cubes.add( new Cube(145, 89, 2, 6) );
+  cubes.add( new Cube(147, 89, 2, 2) );
+  cubes.add( new Cube(150, 83, 3, 3) );
+  cubes.add( new Cube(151, 79, 3, 8) );
+  cubes.add( new Cube(141, 95, 2, 8) );
+  cubes.add( new Cube(138, 78, 2, 11) );
+  
   areas.add( new ClickableArea( cubes, null ) );
   
-  //country name...
+  //Finland
   cubes = new ArrayList<Cube>();
-  cubes.add( new Cube(10,50) );
-  cubes.add( new Cube(11,50) );
-  cubes.add( new Cube(12,50) );
-  cubes.add( new Cube(13,50,3,8) );
-  cubes.add( new Cube(14,51,10,20) );
-  cubes.add( new Cube(24,61,10) );
+  cubes.add( new Cube(106, 27, 4, 11) );
   areas.add( new ClickableArea( cubes, null ) );
 }
