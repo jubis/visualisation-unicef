@@ -10,4 +10,7 @@ static class Point {
   public Point plus( Point p ) {
     return new Point( this.x + p.x, this.y + p.y );
   }
+  public Point multiply( int m ) {
+    return new Point( this.x*m, this.y*m );
+  }
 }

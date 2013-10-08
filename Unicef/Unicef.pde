@@ -73,6 +73,7 @@ public void initCountries() {
   cubes.add( new Cube(11,50) );
   cubes.add( new Cube(12,50) );
   cubes.add( new Cube(13,50) );
-  cubes.add( new Cube(14,51) );
+  cubes.add( new Cube(14,51,10) );
+  cubes.add( new Cube(24,61,10) );
   areas.add( new ClickableArea( cubes, null ) );
 }
