@@ -72,11 +72,25 @@ public void initCountries() {
   cubes.add( new Cube(151, 79, 3, 8) );
   cubes.add( new Cube(141, 95, 2, 8) );
   cubes.add( new Cube(138, 78, 2, 11) );
-  
   areas.add( new ClickableArea( cubes, null ) );
   
   //Finland
   cubes = new ArrayList<Cube>();
   cubes.add( new Cube(106, 27, 4, 11) );
+  areas.add( new ClickableArea( cubes, null ) );
+  
+  //Kenya
+  cubes = new ArrayList<Cube>();
+  cubes.add( new Cube(116, 112, 4, 8) );
+  cubes.add( new Cube(116, 112, 4, 8) );
+  cubes.add( new Cube(117, 120, 2, 2) );
+  areas.add( new ClickableArea( cubes, null ) );
+  
+  //Tanzania
+  cubes = new ArrayList<Cube>();
+  cubes.add( new Cube(113, 120, 4, 8) );
+  cubes.add( new Cube(116, 122, 3, 10) );
+  cubes.add( new Cube(114, 128, 2, 3) );
+  cubes.add( new Cube(113, 119, 3, 1) );
   areas.add( new ClickableArea( cubes, null ) );
 }
