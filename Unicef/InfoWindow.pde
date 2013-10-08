@@ -37,20 +37,21 @@ class InfoWindow {
   
   /** Checks if the infowindow fits inside the main window (x-coordinates) and turns
   the infowindow the other way round if necessary.*/
-  /*
+  
   if(this.clickedX > windowSize.x-this.widthOfWindow) {
      this.beginningOfRectangleX = this.clickedX-this.widthOfWindow-this.widthOfTriangle;
      this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
   } else {
     this.beginningOfRectangleX = this.clickedX+this.widthOfTriangle;
     this.topCornerOfTriangleX = this.beginningOfRectangleX;
-  }*/ 
+  }
 }
     
   
   void draw() {
     //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
     //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
+    fill(255,255,255);
     rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
     triangle(this.clickedX,this.clickedY, beginningOfRectangleX,this.topCornerOfTriangleY, beginningOfRectangleX, this.topCornerOfTriangleY+heightOfTriangle);
   }
