@@ -1,5 +1,5 @@
 PImage map;
-Point windowSize = new Point(800,600);
+Point windowSize = new Point(1000,600);
 Point imageSize = new Point( 1000, 600 );
 ArrayList<InfoWindow> windows = new ArrayList<InfoWindow>();
 ArrayList<ClickableArea> areas = new ArrayList<ClickableArea>();
