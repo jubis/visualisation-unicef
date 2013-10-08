@@ -8,7 +8,7 @@ ArrayList<PieChart> pieCharts = new ArrayList<PieChart>();
 void setup() {
   map = loadImage("map.jpg");
   size((int)windowSize.x,(int)windowSize.y);
- pieCharts.add(new PieChart(new float[]{100, 400, 400, 1000, 700}, 0, 0)); 
+ pieCharts.add(new PieChart(new float[]{100, 400, 400, 1000, 700}, 100, 0)); 
  pieCharts.add(new PieChart(new float[]{800, 300, 400, 700}, 300, 300)); 
  pieCharts.add(new PieChart(new float[]{700, 700, 400}, 300, 30));
 }

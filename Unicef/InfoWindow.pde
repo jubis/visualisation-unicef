@@ -42,7 +42,6 @@ class InfoWindow {
   if(this.clickedX > windowSize.x-this.widthOfWindow-this.widthOfTriangle) {
      this.beginningOfRectangleX = this.clickedX-this.widthOfWindow-this.widthOfTriangle;
      this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
-     println(this.widthOfTriangle);
   } else {
     this.beginningOfRectangleX = this.clickedX+this.widthOfTriangle;
     this.topCornerOfTriangleX = this.beginningOfRectangleX;
@@ -50,7 +49,7 @@ class InfoWindow {
 }
     
   
-  void draw() {
+  boolean draw() {
     if(this.visible) {
       //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
       //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
@@ -58,6 +57,7 @@ class InfoWindow {
       rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
       triangle(this.clickedX,this.clickedY, topCornerOfTriangleX,this.topCornerOfTriangleY, topCornerOfTriangleX, this.topCornerOfTriangleY+heightOfTriangle);
     }
+    return this.visible;
   }
   
   public void toggleVisibility() {
