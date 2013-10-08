@@ -1,16 +1,19 @@
 import geomerative.*;
+import java.util.Map;
 
+Point windowSize = new Point( 1200, 600 );
 RShape s;
 RShape s2;
 RShape sea;
 RShape land;
 ArrayList<String> highlights = new ArrayList<String>();
 ArrayList<String> specials = new ArrayList<String>();
+HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
 
 void setup() {
   RG.init(this);
   
-  size( 1200, 600 ); 
+  size( (int)windowSize.x, (int)windowSize.y ); 
   s = RG.loadShape( "world_map.svg" ); 
   s.scale(0.4);
   s.translate(50,0);
@@ -21,6 +24,7 @@ void setup() {
   
   initHighs();
   initSpecials();
+  initWindows();
 }
 
 void draw() {
@@ -42,7 +46,7 @@ void draw() {
     else if( specials.contains( child.name ) ) {
       fill( 100, 255, 255 );
     }
-    if( child.contains(new RPoint(mouseX,mouseY)) ) {
+    if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
       fill( 100, 255, 100 );
       println( child.name );
     }
@@ -50,6 +54,18 @@ void draw() {
     RG.shape( child );
   }
   
+  
+  for( Map.Entry window : windows.entrySet() ) {
+    ((InfoWindow)window.getValue()).draw();
+  }
+}
+
+void mouseClicked() {
+  for( String special : specials ) {
+    if( land.getChild( special ).contains(new RPoint( mouseX, mouseY ) ) ) {
+      windows.get( special ).toggleVisibility();
+    }
+  }
 }
 
 void initHighs() {
@@ -58,4 +74,14 @@ void initHighs() {
 
 void initSpecials() {
   specials.add( "path10948" );
+}
+
+void initWindows() {
+  InfoWindow newWindow = null;
+  for( String shape : specials ) {
+    RPoint center = land.getChild( shape ).getCentroid();
+    newWindow = new InfoWindow( new Point( center.x, center.y ), 100, 100 );
+    windows.put( shape, newWindow );
+    newWindow.visible = false;
+  }
 }
