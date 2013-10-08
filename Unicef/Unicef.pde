@@ -93,4 +93,10 @@ public void initCountries() {
   cubes.add( new Cube(114, 128, 2, 3) );
   cubes.add( new Cube(113, 119, 3, 1) );
   areas.add( new ClickableArea( cubes, null ) );
+  
+  //Brazil
+  cubes = new ArrayList<Cube>();
+  cubes.add( new Cube(113, 120, 4, 8) );
+  
+  areas.add( new ClickableArea( cubes, null ) );
 }
