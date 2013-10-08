@@ -36,14 +36,20 @@ class ClickableArea {
 
 class Cube {
   final Point TOTAL_CUBES = new Point( 200, 200 );
-  final Point size = new Point( windowSize.x/TOTAL_CUBES.x, windowSize.y/TOTAL_CUBES.y );
+  final Point sizeOrig = new Point( windowSize.x/TOTAL_CUBES.x, windowSize.y/TOTAL_CUBES.y );
+  final Point size;
   
   Point tl;
   Point br;
   
-  public Cube( int x, int y ) {
-    this.tl = new Point( x*this.size.x, y*this.size.y );
+  public Cube( int x, int y, int times ) {
+    this.size = this.sizeOrig.multiply( times );
+    this.tl = new Point( x*this.sizeOrig.x, y*this.sizeOrig.y );
     this.br = tl.plus( size );
+  }
+  
+  public Cube( int x, int y ) {
+    this( x, y, 1 );
   }
   
   public boolean isClicked( Point m ) {
