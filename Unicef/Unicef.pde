@@ -9,11 +9,6 @@ ArrayList<PieChart> pieCharts = new ArrayList<PieChart>();
 void setup() {
   map = loadImage("map.jpg");
   size((int)windowSize.x,(int)windowSize.y);
-
-//pieCharts.add(new PieChart({0.1*TWO_PI, 0.5*TWO_PI, 0.2*TWO_PI, 0.05*TWO_PI, 0.15*TWO_PI}); 
-//pieCharts.add(new PieChart({0.2*TWO_PI, 0.2*TWO_PI, 0.3*TWO_PI, 0.15*TWO_PI, 0.15*TWO_PI}); 
-//pieCharts.add(new PieChart({0, 0.6*TWO_PI, 0.2*TWO_PI, 0.05*TWO_PI, 0.15*TWO_PI});   
-  
 }
 
 void draw() {
@@ -27,13 +22,17 @@ void draw() {
   drawMatilda();
 }
 
-InfoWindow infowindow = new InfoWindow(this.windowSize; new Point(200,200),200,200);
+InfoWindow infowindow = new InfoWindow(new Point(200,200),200,200);
 void drawMatilda() {
   infowindow.draw();
 }
 
 void drawLaura() {
  
+//pieCharts.add(new PieChart({0.1*TWO_PI, 0.5*TWO_PI, 0.2*TWO_PI, 0.05*TWO_PI, 0.15*TWO_PI}); 
+//pieCharts.add(new PieChart({0.2*TWO_PI, 0.2*TWO_PI, 0.3*TWO_PI, 0.15*TWO_PI, 0.15*TWO_PI}); 
+//pieCharts.add(new PieChart({0, 0.6*TWO_PI, 0.2*TWO_PI, 0.05*TWO_PI, 0.15*TWO_PI});   
+  
  
 }
 
