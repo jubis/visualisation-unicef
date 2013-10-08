@@ -36,6 +36,13 @@ void draw() {
 InfoWindow infowindow = new InfoWindow(new Point(200,200),200,200);
 void drawMatilda() {
   //infowindow.draw();
+  fill(255);
+  stroke(0);
+  rect(15,windowSize.y-45,30,30);
+  textSize(20);
+  fill(0);
+  text("?", 27,windowSize.y-22.5);
+
 }
 
 void drawLaura() {
