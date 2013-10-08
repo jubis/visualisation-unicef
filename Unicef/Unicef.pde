@@ -27,7 +27,7 @@ void draw() {
   drawMatilda();
 }
 
-InfoWindow infowindow = new InfoWindow(this.windowSize; new Point(200,200),200,200);
+InfoWindow infowindow = new InfoWindow(new Point(200,200),200,200);
 void drawMatilda() {
   infowindow.draw();
 }

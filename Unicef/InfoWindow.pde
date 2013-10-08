@@ -15,8 +15,8 @@ class InfoWindow {
  
   
   
-  InfoWindow(Point windowSize, Point clickedXY, int sizeX, int sizeY) {
-    this.widthOfMainWindow = windowSize.x;
+  InfoWindow(Point clickedXY, int sizeX, int sizeY) {
+    
     this.clickedX = clickedXY.x;
     this.clickedY = clickedXY.y;
     this.heightOfWindow = sizeY;
@@ -39,7 +39,7 @@ class InfoWindow {
   
   /** Checks if the infowindow fits inside the main window (x-coordinates) and turns
   the infowindow the other way round if necessary.*/
-  if(this.clickedX > this.widthOfMainWindow-this.widthOfWindow) {
+  if(this.clickedX > windowSize.x-this.widthOfWindow) {
      this.beginningOfRectangleX = this.clickedX-this.widthOfRectangle-this.widthOfTriangle;
      this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
   } else {
