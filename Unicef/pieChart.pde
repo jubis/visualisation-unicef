@@ -17,16 +17,16 @@ class PieChart {
   } 
   
   public void draw(){
-    
+    int startColor = 10;
     float startAngle = 0;
-    float hueDelta = 80/(sectors.length-1); 
+    float hueDelta = (75+startColor)/(sectors.length-1); 
     colorMode(HSB, 100);
     noStroke();
     
     
       for(int i=0; i<sectors.length; i++){
         println(i*hueDelta);
-        fill(i*hueDelta, 100, 100);
+        fill(startColor + i*hueDelta, 100, 100);
         arc(x+40, y+40, 80, 80, startAngle, startAngle + this.sectors[i]*unit);
         startAngle += this.sectors[i]*unit;
       }
