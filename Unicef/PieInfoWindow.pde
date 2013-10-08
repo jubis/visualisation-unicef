@@ -1,6 +1,7 @@
 class PieInfoWindow extends InfoWindow {
   private PieChart pie;
   private String header;
+  private String text = "asdasd afsdf dsa eafad asd a ad a ads asx j j j  awxaw ef";
   private final int padding = 15;
   private int hSize = 30;
   
@@ -19,7 +20,13 @@ class PieInfoWindow extends InfoWindow {
       textSize( this.hSize );
       text( this.header, 
             this.beginningOfRectangleX + this.widthOfWindow/2 - textWidth( this.header )/2, 
-            this.beginningOfRectangleY + this.hSize );  
+            this.beginningOfRectangleY + this.hSize );
+      textSize( 12 );
+      text( this.text,
+            this.beginningOfRectangleX + this.padding,
+            this.beginningOfRectangleY + this.padding*2 + 110,
+            this.widthOfWindow - this.padding*2,
+            100 );
       return true;
     }
     else {
