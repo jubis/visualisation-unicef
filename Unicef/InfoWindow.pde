@@ -39,7 +39,6 @@ class InfoWindow {
   
   /** Checks if the infowindow fits inside the main window (x-coordinates) and turns
   the infowindow the other way round if necessary.*/
-  /*
   if(this.clickedX > windowSize.x-this.widthOfWindow) {
      this.beginningOfRectangleX = this.clickedX-this.widthOfRectangle-this.widthOfTriangle;
      this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
