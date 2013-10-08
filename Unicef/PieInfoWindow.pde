@@ -4,7 +4,8 @@ class PieInfoWindow extends InfoWindow {
   
   public PieInfoWindow( Point start ) {
     super( start, 300, 200 );
-    this.pie = new PieChart( new float[] { 20, 30, 40 }, 
+    this.pie = new PieChart( new float[] { 20, 30, 40 },
+                             new String[] { "a", "b", "c" },
                              this.beginningOfRectangleX + this.padding, 
                              this.beginningOfRectangleY + this.padding );
   }
