@@ -13,4 +13,7 @@ static class Point {
   public Point multiply( int m ) {
     return new Point( this.x*m, this.y*m );
   }
+  public Point multiply( Point m ) {
+    return new Point( this.x*m.x, this.y*m.y );
+  }
 }
