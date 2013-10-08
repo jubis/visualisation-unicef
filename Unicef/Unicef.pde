@@ -17,6 +17,12 @@ void setup() {
  InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), windows );
  ClickableArea area = new ClickableArea( job );
  areas.add( area );
+ 
+   //questionmark box
+  ArrayList<Cube> cubes = new ArrayList<Cube>();
+  cubes.add( new Cube(3,185,6,10) );
+  areas.add( new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), windows)));
+  
 }
 
 void draw() {
