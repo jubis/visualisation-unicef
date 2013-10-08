@@ -38,7 +38,8 @@ void drawLaura() {
 
 Cube cube = new Cube( 0, 0 );
 //areas.add( ClickableArea( new PrintJob( "testing :)" ) ) );
-ClickableArea area = new ClickableArea( new InfoWindowJob( new Point( 100, 100 ), windows ) );
+InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), windows );
+ClickableArea area = new ClickableArea( job );
 //areas.add( area );
 void drawMatias() {
   area.draw();
