@@ -5,10 +5,12 @@ ArrayList<InfoWindow> windows = new ArrayList<InfoWindow>();
 ArrayList<ClickableArea> areas = new ArrayList<ClickableArea>();
 ArrayList<PieChart> pieCharts = new ArrayList<PieChart>();
 
-
 void setup() {
   map = loadImage("map.jpg");
   size((int)windowSize.x,(int)windowSize.y);
+ pieCharts.add(new PieChart(new float[]{100, 400, 400, 1000, 700}, 0, 0)); 
+ pieCharts.add(new PieChart(new float[]{800, 300, 400, 700}, 300, 300)); 
+ pieCharts.add(new PieChart(new float[]{700, 700, 400}, 300, 30));
 }
 
 void draw() {
@@ -24,16 +26,13 @@ void draw() {
 
 InfoWindow infowindow = new InfoWindow(new Point(200,200),200,200);
 void drawMatilda() {
-  infowindow.draw();
+  //infowindow.draw();
 }
 
 void drawLaura() {
- 
-//pieCharts.add(new PieChart({0.1*TWO_PI, 0.5*TWO_PI, 0.2*TWO_PI, 0.05*TWO_PI, 0.15*TWO_PI}); 
-//pieCharts.add(new PieChart({0.2*TWO_PI, 0.2*TWO_PI, 0.3*TWO_PI, 0.15*TWO_PI, 0.15*TWO_PI}); 
-//pieCharts.add(new PieChart({0, 0.6*TWO_PI, 0.2*TWO_PI, 0.05*TWO_PI, 0.15*TWO_PI});   
-  
- 
+ for(int i=0; i<3; i++){
+   pieCharts.get(i).draw();
+  }
 }
 
 Cube cube = new Cube( 0, 0 );

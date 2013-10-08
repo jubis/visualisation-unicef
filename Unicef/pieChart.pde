@@ -17,14 +17,25 @@ class PieChart {
   } 
   
   public void draw(){
-    
-    float startAngle = 0; 
+    int startColor = 10;
+    float startAngle = 0;
+    float hueDelta = (75+startColor)/(sectors.length-1); 
+    colorMode(HSB, 100);
+    noStroke();
     
       for(int i=0; i<sectors.length; i++){
-        fill(i*60, i*50, i*60);
-        arc(50, 50, 80, 80, startAngle, startAngle + this.sectors[i]*unit);
+       
+        fill(startColor + i*hueDelta, 100, 100);
+        arc(x+40, y+40, 80, 80, startAngle, startAngle + this.sectors[i]*unit);
         startAngle += this.sectors[i]*unit;
+        
+        fill(startColor + i*hueDelta, 100, 100);
+        rect(x+100, y+20*i, 15, 15);
+        textSize(28);
+        
+        text("word", x+120, 15+y+20*i); 
       }
+      colorMode(RGB, 100);
    }
 }
 
