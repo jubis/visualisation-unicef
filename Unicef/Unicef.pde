@@ -28,7 +28,7 @@ void draw() {
     area.draw();
   }
   
- // drawLaura();
+  drawLaura();
   drawMatias();
   drawMatilda();
 }
@@ -78,7 +78,7 @@ public void initCountries() {
   //Nepal
   cubes = new ArrayList<Cube>();
   cubes.add( new Cube(143, 77, 2, 3) );
-  cubes.add( new Cube(145, 78, 2, 3) );
+  cubes.add( new Cube(145, 78, 2, 4) );
   cubes.add( new Cube(147, 79, 3, 3) );
    areas.add( new ClickableArea( cubes, null ) );
   
@@ -89,8 +89,7 @@ public void initCountries() {
   
   //Kenya
   cubes = new ArrayList<Cube>();
-  cubes.add( new Cube(116, 112, 4, 8) );
-  cubes.add( new Cube(116, 112, 4, 8) );
+  cubes.add( new Cube(115, 112, 5, 8) );
   cubes.add( new Cube(117, 120, 2, 2) );
    areas.add( new ClickableArea( cubes, null ) );
   
@@ -121,5 +120,23 @@ public void initCountries() {
  cubes.add( new Cube(52, 131, 16, 4) );
  cubes.add( new Cube(54, 135, 14, 4) );
  cubes.add( new Cube(56, 139, 12, 8) );
+   areas.add( new ClickableArea( cubes, null ) );
+   
+ //Vietnam
+ cubes = new ArrayList<Cube>();
+ cubes.add( new Cube(158, 87, 3, 6) );
+ cubes.add( new Cube(160, 93, 2, 1) );
+ cubes.add( new Cube(161, 94) );
+ cubes.add( new Cube(162, 95, 1, 2) );
+ cubes.add( new Cube(163, 96, 1, 5) );
+ cubes.add( new Cube(162, 101, 2, 2) );
+ cubes.add( new Cube(161, 103, 2, 2) );
+   areas.add( new ClickableArea( cubes, null ) );
+   
+ //Laos
+ cubes = new ArrayList<Cube>();
+ cubes.add( new Cube(160, 94) );
+ cubes.add( new Cube(161, 95, 1, 3) );
+ cubes.add( new Cube(162, 97, 1, 2) );
    areas.add( new ClickableArea( cubes, null ) );
 }
