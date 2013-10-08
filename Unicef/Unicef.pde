@@ -65,13 +65,13 @@ public void initCountries() {
   cubes.add( new Cube(140, 75, 3, 20) );
   cubes.add( new Cube(149, 82, 1, 6) );
   cubes.add( new Cube(150, 82, 3, 4) );
-  cubes.add( new Cube(138, 78, 2, 11) );
+  cubes.add( new Cube(137, 78, 3, 11) );
   cubes.add( new Cube(143, 83, 6, 7) );
   cubes.add( new Cube(143, 90, 3, 5) );
   cubes.add( new Cube(146, 90, 2, 3) );
   cubes.add( new Cube(141, 95, 4, 11) );
   cubes.add( new Cube(143, 80, 2, 3) );
-  cubes.add( new Cube(145, 82, 3, 1) );
+  cubes.add( new Cube(145, 82, 4, 1) );
   cubes.add( new Cube(151, 79, 3, 3) );
    areas.add( new ClickableArea( cubes, null ) );
    
