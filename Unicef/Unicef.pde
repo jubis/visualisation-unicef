@@ -14,14 +14,14 @@ void setup() {
  
  initCountries();
  
- InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), windows );
+ InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), null, windows );
  ClickableArea area = new ClickableArea( job );
  areas.add( area );
  
    //questionmark box
   ArrayList<Cube> cubes = new ArrayList<Cube>();
   cubes.add( new Cube(3,185,6,10) );
-  areas.add( new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), windows)));
+  areas.add( new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), null/*new QuestionMarkInfoWindow()*/, windows)));
   
 }
 
