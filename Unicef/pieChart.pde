@@ -23,12 +23,17 @@ class PieChart {
     colorMode(HSB, 100);
     noStroke();
     
-    
       for(int i=0; i<sectors.length; i++){
-        println(i*hueDelta);
+       
         fill(startColor + i*hueDelta, 100, 100);
         arc(x+40, y+40, 80, 80, startAngle, startAngle + this.sectors[i]*unit);
         startAngle += this.sectors[i]*unit;
+        
+        fill(startColor + i*hueDelta, 100, 100);
+        rect(x+100, y+20*i, 15, 15);
+        textSize(28);
+        
+        text("word", x+120, 15+y+20*i); 
       }
       colorMode(RGB, 100);
    }
