@@ -57,6 +57,8 @@ class InfoWindow {
       stroke( 0 );
       rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
       triangle(this.clickedX,this.clickedY, topCornerOfTriangleX,this.topCornerOfTriangleY, topCornerOfTriangleX, this.topCornerOfTriangleY+heightOfTriangle);
+      stroke(255,255,255);
+      line(this.topCornerOfTriangleX, this.topCornerOfTriangleY+2,this.topCornerOfTriangleX,this.topCornerOfTriangleY+heightOfTriangle);
     }
     return this.visible;
   }
