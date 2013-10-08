@@ -10,13 +10,12 @@ class InfoWindow {
   float widthOfTriangle;
   float clickedX;
   float clickedY;
-  float widthOfMainWindow;
   
+  public boolean visible = true;
  
   
   
   InfoWindow(Point clickedXY, int sizeX, int sizeY) {
-    this.widthOfMainWindow = windowSize.x;
     this.clickedX = clickedXY.x;
     this.clickedY = clickedXY.y;
     this.heightOfWindow = sizeY;
@@ -39,24 +38,30 @@ class InfoWindow {
   
   /** Checks if the infowindow fits inside the main window (x-coordinates) and turns
   the infowindow the other way round if necessary.*/
-  /*
-  if(this.clickedX > windowSize.x-this.widthOfWindow) {
-     this.beginningOfRectangleX = this.clickedX-this.widthOfRectangle-this.widthOfTriangle;
+  
+  if(this.clickedX > windowSize.x-this.widthOfWindow-this.widthOfTriangle) {
+     this.beginningOfRectangleX = this.clickedX-this.widthOfWindow-this.widthOfTriangle;
      this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
+     println(this.widthOfTriangle);
   } else {
     this.beginningOfRectangleX = this.clickedX+this.widthOfTriangle;
     this.topCornerOfTriangleX = this.beginningOfRectangleX;
-  }*/ 
+  }
 }
     
   
   void draw() {
-    //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
-    //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
-    rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
-    triangle(this.clickedX,this.clickedY, beginningOfRectangleX,this.topCornerOfTriangleY, beginningOfRectangleX, this.topCornerOfTriangleY+heightOfTriangle);
+    if(this.visible) {
+      //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
+      //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
+      fill(255,255,255);
+      rect(beginningOfRectangleX, beginningOfRectangleY, widthOfWindow, heightOfWindow, 7);
+      triangle(this.clickedX,this.clickedY, topCornerOfTriangleX,this.topCornerOfTriangleY, topCornerOfTriangleX, this.topCornerOfTriangleY+heightOfTriangle);
+    }
   }
   
-  
+  public void toggleVisibility() {
+    this.visible = !this.visible;
+  }
   
 }
