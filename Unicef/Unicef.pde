@@ -94,16 +94,25 @@ public void initCountries() {
   cubes.add( new Cube(113, 119, 3, 1) );
   areas.add( new ClickableArea( cubes, null ) );
   
-  //Brazil
+  //Bolivia
   cubes = new ArrayList<Cube>();
-  cubes.add( new Cube(48, 120, 20, 20) );
+  cubes.add( new Cube(49, 135, 5, 5) );
   cubes.add( new Cube(49, 140, 5, 6) );
-  cubes.add( new Cube(54, 140, 14, 2) );
-  cubes.add( new Cube(56, 142, 12, 5) );
-  cubes.add( new Cube(58, 147, 5, 12) );
-  cubes.add( new Cube(48, 115, 13, 5) );
-  cubes.add( new Cube(68, 124, 2, 9) );
-  cubes.add( new Cube(46, 123, 2, 7) );
-  cubes.add( new Cube(52, 111, 3, 4) );
+  cubes.add( new Cube(54, 139, 2, 4) );
+  cubes.add( new Cube(49, 131, 3, 4) );
   areas.add( new ClickableArea( cubes, null ) );
+ 
+ 
+ //Brazil
+ cubes = new ArrayList<Cube>();
+ cubes.add( new Cube(48, 115, 13, 5) );
+ cubes.add( new Cube(68, 124, 2, 9) );
+ cubes.add( new Cube(58, 147, 5, 12) );
+ cubes.add( new Cube(46, 123, 2, 7) );
+ cubes.add( new Cube(52, 111, 3, 4) );
+ cubes.add( new Cube(48, 120, 20, 11) );
+ cubes.add( new Cube(52, 131, 16, 4) );
+ cubes.add( new Cube(54, 135, 14, 4) );
+ cubes.add( new Cube(56, 139, 12, 8) );
+ areas.add( new ClickableArea( cubes, null ) );
 }
