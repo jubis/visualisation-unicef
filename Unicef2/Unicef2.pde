@@ -11,6 +11,7 @@ RShape land;
 List<String> highlights = new ArrayList<String>();
 List<String> specials = new ArrayList<String>();
 HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
+InfoWindow helpWindow;
 
 ArrayList<String> workList = new ArrayList<String>();
 
@@ -24,7 +25,22 @@ void setup() {
   s2 = s.getChild( "layer3" ).getChild( "path8070" );
   sea = s.getChild( "layer2" );
   land = s.getChild( "layer3" );
+  land.addChild(  );
   RG.ignoreStyles();
+  
+  RShape qM = new RShape( new RPath( new RPoint[] { new RPoint( 30, windowSize.y-90 ),
+                                                    new RPoint( 90, windowSize.y-90 ),
+                                                    new RPoint( 90, windowSize.y-30 ),
+                                                    new RPoint( 30, windowSize.y-30 ),
+                                                    new RPoint( 30, windowSize.y-90 ) } ) );
+  qM.name = "qm";
+  land.addChild( qM );
+  helpWindow = new InfoWindow( new Point( 60, windowSize.y - 60 ), 300, 300 );
+  helpWindow.toggleVisibility();
+  
+  //ArrayList<Cube> cubes = new ArrayList<Cube>(); 
+  //cubes.add( new Cube(3,185,6,10) );
+  //questionMark = new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), null, windows));
   
   initHighs();
   initSpecials();
@@ -43,6 +59,7 @@ void draw() {
   
   stroke( 0, 153, 255 );
   for( RShape child : land.children ) {
+    
     fill( 210 );
     if( highlights.contains( child.name ) ) {
       fill( 255, 242, 174 );
@@ -55,9 +72,13 @@ void draw() {
       }
     }
     
-    
-    if( workList.contains( child.name ) ) {
+    /*if( workList.contains( child.name ) ) {
       fill( 255, 50, 50 );
+    }*/
+    
+    if( child.name.equals( "qm" ) ) {
+      stroke( 0 );
+      fill( 255 );
     }
     
     RG.shape( child );
@@ -67,29 +88,32 @@ void draw() {
   for( Map.Entry window : windows.entrySet() ) {
     ((InfoWindow)window.getValue()).draw();
   }
+  helpWindow.draw();
 }
 
 void mouseClicked() {
   for( String special : specials ) {
     if( land.getChild( special ).contains(new RPoint( mouseX, mouseY ) ) ) {
       windows.get( special ).toggleVisibility();
-      return;
     }
   }
   for( RShape child : land.children ) {
     if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
-      if( ! workList.contains( child.name ) ) {
+      /*if( ! workList.contains( child.name ) ) {
         workList.add( child.name );
       }
       else {
         workList.remove( child.name );
+      }*/
+      if( child.name.equals( "qm" ) ) {
+        println( "question?" );
+        helpWindow.toggleVisibility();
       }
     } 
   }
-  for( String land : workList ) {
+  /*for( String land : workList ) {
     print( "\"" + land + "\",");
-  }
-  println( "" );
+  }*/
 }
 
 void initHighs() {

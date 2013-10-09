@@ -21,7 +21,7 @@ void setup() {
    //questionmark box
   ArrayList<Cube> cubes = new ArrayList<Cube>();
   cubes.add( new Cube(3,185,6,10) );
-  areas.add( new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), null/*new QuestionMarkInfoWindow()*/, windows)));
+  areas.add( new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), null, windows)));
   
 }
 
