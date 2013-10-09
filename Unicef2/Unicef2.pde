@@ -65,6 +65,10 @@ void draw() {
       fill( 255, 50, 50 );
     }
     
+    if(child.name.equals("path10146")) {
+      fill(255);
+    }
+    
     RG.shape( child );
   }
   
