@@ -90,10 +90,11 @@ void draw() {
     
     if(child.name.equals("path10146")) {
       fill(255);
-    }
+    
       if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
       fill( 118, 251, 253 );
       }  
+    }
     
     RG.shape( child );
   }
