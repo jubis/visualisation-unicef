@@ -103,12 +103,9 @@ void draw() {
   for( Map.Entry window : windows.entrySet() ) {
     ((InfoWindow)window.getValue()).draw();
   }
-<<<<<<< HEAD
   helpWindow.draw();
-=======
   
-   image(logo, 1070, 30, 100, 90);
->>>>>>> 84a7f01dccfcc8aeaad38a502ff1820a732226f4
+  image(logo, 1070, 30, 100, 90);
 }
 
 void mouseClicked() {
