@@ -43,16 +43,18 @@ void draw() {
   
   stroke( 0, 153, 255 );
   for( RShape child : land.children ) {
-    fill( 230 );
+    fill( 210 );
     if( highlights.contains( child.name ) ) {
       fill( 255, 242, 174 );
     } 
     else if( specials.contains( child.name ) ) {
       fill(255, 0, 154 );
+      
+      if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
+      fill( 255, 140, 209 );
+      }
     }
-    if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
-      fill( 100, 255, 100 );
-    }
+    
     
     if( workList.contains( child.name ) ) {
       fill( 255, 50, 50 );
