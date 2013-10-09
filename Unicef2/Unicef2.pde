@@ -43,9 +43,6 @@ void draw() {
   
   stroke( 100, 100, 255 );
   for( RShape child : land.children ) {
-    
-
-    
     fill( 200 );
     if( highlights.contains( child.name ) ) {
       fill( 255, 255, 100 );

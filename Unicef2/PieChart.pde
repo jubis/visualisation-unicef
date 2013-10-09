@@ -38,7 +38,7 @@ class PieChart {
           text(this.texts[i], x+120, 12+y+20*i);
         }   
      }
-    colorMode(RGB, 100);
+    colorMode(RGB, 255);
   }
 }
 
