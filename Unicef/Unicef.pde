@@ -14,9 +14,15 @@ void setup() {
  
  initCountries();
  
- InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), windows );
+ InfoWindowJob job = new InfoWindowJob( new Point( 700, 100 ), new Point( 100, 100 ), null, windows );
  ClickableArea area = new ClickableArea( job );
  areas.add( area );
+ 
+   //questionmark box
+  ArrayList<Cube> cubes = new ArrayList<Cube>();
+  cubes.add( new Cube(3,185,6,10) );
+  areas.add( new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), null/*new QuestionMarkInfoWindow()*/, windows)));
+  
 }
 
 void draw() {
@@ -36,6 +42,13 @@ void draw() {
 InfoWindow infowindow = new InfoWindow(new Point(200,200),200,200);
 void drawMatilda() {
   //infowindow.draw();
+  fill(255);
+  stroke(0);
+  rect(15,windowSize.y-45,30,30);
+  textSize(20);
+  fill(0);
+  text("?", 27,windowSize.y-22.5);
+
 }
 
 void drawLaura() {

@@ -3,9 +3,9 @@ class InfoWindowJob extends Job {
   public final Point size;
   private InfoWindow window;
   
-  public InfoWindowJob( Point pos, Point size, ArrayList<InfoWindow> windows ) {
+  public InfoWindowJob( Point pos, Point size, InfoWindow window, ArrayList<InfoWindow> windows ) {
     this.size = size;
-    this.window = new PieInfoWindow( pos, "Info" );
+    this.window = new PieInfoWindow( pos, "Finland" );
     this.window.visible = false;
     windows.add( this.window );
   } 
