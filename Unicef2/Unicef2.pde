@@ -8,6 +8,7 @@ RShape s;
 RShape s2;
 RShape sea;
 RShape land;
+PImage logo;
 List<String> highlights = new ArrayList<String>();
 List<String> specials = new ArrayList<String>();
 HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
@@ -41,6 +42,10 @@ void setup() {
   //ArrayList<Cube> cubes = new ArrayList<Cube>(); 
   //cubes.add( new Cube(3,185,6,10) );
   //questionMark = new ClickableArea( cubes, new InfoWindowJob(new Point(30,windowSize.y-30), new Point (30,30), null, windows));
+
+  logo = loadImage("logo.png");
+  
+  RG.ignoreStyles();
   
   initHighs();
   initSpecials();
@@ -56,6 +61,8 @@ void draw() {
   /*stroke( 0 );
   fill( 255 );
   RG.shape( land );*/
+  
+ 
   
   stroke( 0, 153, 255 );
   for( RShape child : land.children ) {
@@ -81,6 +88,13 @@ void draw() {
       fill( 255 );
     }
     
+    if(child.name.equals("path10146")) {
+      fill(255);
+    }
+      if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
+      fill( 118, 251, 253 );
+      }  
+    
     RG.shape( child );
   }
   
@@ -88,7 +102,12 @@ void draw() {
   for( Map.Entry window : windows.entrySet() ) {
     ((InfoWindow)window.getValue()).draw();
   }
+<<<<<<< HEAD
   helpWindow.draw();
+=======
+  
+   image(logo, 1070, 30, 100, 90);
+>>>>>>> 84a7f01dccfcc8aeaad38a502ff1820a732226f4
 }
 
 void mouseClicked() {
