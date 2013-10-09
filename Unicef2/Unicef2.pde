@@ -106,7 +106,7 @@ void initWindows() {
   InfoWindow newWindow = null;
   for( String shape : specials ) {
     RPoint center = land.getChild( shape ).getCentroid();
-    newWindow = new InfoWindow( new Point( center.x, center.y ), 100, 100 );
+    newWindow = new CountryInfo( new Point( center.x, center.y ), shape );
     windows.put( shape, newWindow );
     newWindow.visible = false;
   }
