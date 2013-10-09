@@ -7,6 +7,7 @@ class InfoWindowQuestionMark extends InfoWindow{
   
   boolean draw() {
     super();
-    
   }
+    
+  
 }
