@@ -8,6 +8,7 @@ RShape s;
 RShape s2;
 RShape sea;
 RShape land;
+PImage logo;
 List<String> highlights = new ArrayList<String>();
 List<String> specials = new ArrayList<String>();
 HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
@@ -24,7 +25,9 @@ void setup() {
   s2 = s.getChild( "layer3" ).getChild( "path8070" );
   sea = s.getChild( "layer2" );
   land = s.getChild( "layer3" );
+  logo = loadImage("logo.png");
   RG.ignoreStyles();
+  
   
   initHighs();
   initSpecials();
@@ -40,6 +43,8 @@ void draw() {
   /*stroke( 0 );
   fill( 255 );
   RG.shape( land );*/
+  
+ 
   
   stroke( 0, 153, 255 );
   for( RShape child : land.children ) {
@@ -65,6 +70,8 @@ void draw() {
   for( Map.Entry window : windows.entrySet() ) {
     ((InfoWindow)window.getValue()).draw();
   }
+  
+   image(logo, 1070, 30, 100, 90);
 }
 
 void mouseClicked() {
