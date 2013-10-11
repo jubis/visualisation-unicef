@@ -31,11 +31,11 @@ void setup() {
   land = s.getChild( "layer3" );
   RG.ignoreStyles();
   
-  RShape qM = new RShape( new RPath( new RPoint[] { new RPoint( 30, windowSize.y-90 ),
-                                                    new RPoint( 90, windowSize.y-90 ),
-                                                    new RPoint( 90, windowSize.y-30 ),
-                                                    new RPoint( 30, windowSize.y-30 ),
-                                                    new RPoint( 30, windowSize.y-90 ) } ) );
+  RShape qM = new RShape( new RPath( new RPoint[] { new RPoint( 20, windowSize.y-55 ),
+                                                    new RPoint( 55, windowSize.y-55 ),
+                                                    new RPoint( 55, windowSize.y-20 ),
+                                                    new RPoint( 20, windowSize.y-20 ),
+                                                    new RPoint( 20, windowSize.y-55 ) } ) );
   qM.name = "qm";
   land.addChild( qM );
   helpWindow = new QMInfo( rToN( qM.getCentroid() ) );
@@ -90,7 +90,8 @@ void draw() {
     
     if( child.name.equals( "qm" ) ) {
       stroke( 0 );
-      fill( 255 );
+      fill( 255,255,255,200 );
+     
     }
     
     if(child.name.equals("path10146")) {
@@ -111,6 +112,10 @@ void draw() {
   }
   helpWindow.draw();
   finlandWindow.draw();
+  
+  fill(0);
+  textSize(24);
+  text("?",32,windowSize.y-30);
 }
 
 void mouseClicked() {
