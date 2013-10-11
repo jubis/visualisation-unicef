@@ -115,7 +115,7 @@ void draw() {
   
   fill(0);
   textSize(24);
-  text("?",32,windowSize.y-30);
+  text("?",33,windowSize.y-29);
 }
 
 void mouseClicked() {
