@@ -38,7 +38,7 @@ void setup() {
                                                     new RPoint( 30, windowSize.y-90 ) } ) );
   qM.name = "qm";
   land.addChild( qM );
-  helpWindow = new InfoWindow( new Point( 60, windowSize.y - 60 ), 300, 300 );
+  helpWindow = new QMInfo( rToN( qM.getCentroid() ) );
   helpWindow.toggleVisibility();
   
   finlandWindow = new FinlandInfo( rToN( land.getChild( finland ).getCentroid() ) );

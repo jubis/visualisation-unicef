@@ -35,8 +35,8 @@ class PieChart {
           rect(x+100, y+20*i, 15, 15);
           textSize(14);
           fill(0);
-          int j = 0;
-          for(String text : this.texts ) println(text + " " + j++);
+          //int j = 0;
+          //for(String text : this.texts ) println(text + " " + j++);
           text((int)this.sectors[i] + "%," + this.texts[i], x+120, 12+y+20*i);
         }   
      }

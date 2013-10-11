@@ -1,16 +1,16 @@
 class CountryInfo extends InfoWindow {
   private PieChart pie;
-  private final int padding = 15;
+  private final int padding = 20;
   private int hSize = 30;
   private Country country;
   
   public CountryInfo( Point start, String filename ) {
-    super( start, 400, 300 );
+    super( start, 450, 300 );
     this.country = new Country( filename );
     this.pie = new PieChart( this.country.sectors,
                              this.country.descs,
                              this.beginningOfRectangleX + this.padding , 
-                             this.beginningOfRectangleY + this.padding + this.hSize );
+                             this.beginningOfRectangleY + this.padding*2 + this.hSize );
   }
   
   public boolean draw() {
@@ -21,11 +21,11 @@ class CountryInfo extends InfoWindow {
       textSize( this.hSize );
       text( this.country.title, 
             this.beginningOfRectangleX + this.widthOfWindow/2 - textWidth( this.country.title )/2, 
-            this.beginningOfRectangleY + this.hSize );
+            this.beginningOfRectangleY + this.hSize + this.padding );
       textSize( 12 );
       text( this.country.text,
             this.beginningOfRectangleX + this.padding,
-            this.beginningOfRectangleY + this.padding*2 + 110,
+            this.beginningOfRectangleY + this.padding*3 + 110,
             this.widthOfWindow - this.padding*2,
             200 );
       return true;
