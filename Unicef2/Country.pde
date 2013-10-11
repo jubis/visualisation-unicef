@@ -20,7 +20,13 @@ class Country{
       this.sectors[i] = float( sectorsTemp[i] );
     }
     
-    this.descs = split( rows[1], ',' );
+    String[] descsTemp = split( rows[2], ',' );
+    if( descsTemp.length == 1 ) {
+      this.descs = new String[] { descsTemp[0], "" };
+    }
+    else {
+      this.descs = descsTemp;
+    }
   }
 }
     
