@@ -37,7 +37,7 @@ class PieChart {
           fill(0);
           //int j = 0;
           //for(String text : this.texts ) println(text + " " + j++);
-          text((int)this.sectors[i] + "%," + this.texts[i], x+120, 12+y+20*i);
+          text((int)this.sectors[i] + "%, " + this.texts[i], x+120, 12+y+20*i);
         }   
      }
     colorMode(RGB, 255);

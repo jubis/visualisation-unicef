@@ -2,6 +2,9 @@ import geomerative.*;
 import java.util.Map;
 import java.util.Arrays;
 import java.util.List;
+import java.awt.Desktop;
+import java.net.URL;
+import java.net.URI;
 
 Point windowSize = new Point( 1200, 600 );
 RShape s;
@@ -14,6 +17,8 @@ List<String> specials = new ArrayList<String>();
 HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
 InfoWindow helpWindow;
 InfoWindow finlandWindow;
+
+InfoWindow windowOpen;
 
 final String finland = "path10146";
 
@@ -31,6 +36,14 @@ void setup() {
   land = s.getChild( "layer3" );
   RG.ignoreStyles();
   
+  RShape unicef = new RShape( new RPath( new RPoint[] { new RPoint( 1070, 30 ),
+                                                        new RPoint( 1070, 120 ),
+                                                        new RPoint( 1170, 120 ),
+                                                        new RPoint( 1170, 30 ),
+                                                        new RPoint( 1070, 30 ) } ) );
+  unicef.name = "unicef";
+  land.addChild( unicef );
+  
   RShape qM = new RShape( new RPath( new RPoint[] { new RPoint( 20, windowSize.y-55 ),
                                                     new RPoint( 55, windowSize.y-55 ),
                                                     new RPoint( 55, windowSize.y-20 ),
@@ -41,7 +54,7 @@ void setup() {
   helpWindow = new QMInfo( rToN( qM.getCentroid() ) );
   helpWindow.toggleVisibility();
   
-  finlandWindow = new FinlandInfo( rToN( land.getChild( finland ).getCentroid() ) );
+  finlandWindow = new CountryInfo( rToN( land.getChild( finland ).getCentroid() ), "Suomi.txt" );//new FinlandInfo( rToN( land.getChild( finland ).getCentroid() ) );
   finlandWindow.toggleVisibility();
   
   //ArrayList<Cube> cubes = new ArrayList<Cube>(); 
@@ -83,6 +96,9 @@ void draw() {
       fill( 255, 140, 209 );
       }
     }
+    else if( child.name.equals( "unicef" ) ) {
+      break;
+    }
     
     /*if( workList.contains( child.name ) ) {
       fill( 255, 50, 50 );
@@ -91,14 +107,13 @@ void draw() {
     if( child.name.equals( "qm" ) ) {
       stroke( 0 );
       fill( 255,255,255,200 );
-     
     }
     
     if(child.name.equals("path10146")) {
       fill(255);
     
       if( child.contains(new RPoint( mouseX, mouseY ) ) ) {
-      fill( 118, 251, 253 );
+        fill( 118, 251, 253 );
       }  
     }
     
@@ -119,6 +134,11 @@ void draw() {
 }
 
 void mouseClicked() {
+  if( windowOpen != null ) {
+    windowOpen.toggleVisibility();
+    windowOpen = null;
+  }
+  
   for( String special : specials ) {
     if( land.getChild( special ).contains(new RPoint( mouseX, mouseY ) ) ) {
       windows.get( special ).toggleVisibility();
@@ -136,8 +156,11 @@ void mouseClicked() {
         println( "question?" );
         helpWindow.toggleVisibility();
       }
-      if( child.name.equals( finland ) ) {
+      else if( child.name.equals( finland ) ) {
         finlandWindow.toggleVisibility();
+      }
+      else if( child.name.equals( "unicef" ) ) {
+        openUnicef();
       }
     } 
   }
@@ -167,10 +190,10 @@ void initHighs() {
 }
 
 void initSpecials() {//,"path8342"
-  specials = Arrays.asList( new String[] { "path10948","path8314","path8200","path10890","path12352","path8224","path12276","path9060","path11962"});
+  specials = Arrays.asList( new String[] { "path10948","path8314","path8200","path12352","path8224","path12276","path9060","path11962"});
 }
 
-String[] files = new String[] { "India.txt", "Brazil.txt","Bolivia.txt","Tanzania.txt","Brazil.txt","Kenya.txt","Nepal.txt","Vietnam.txt","Laos.txt" };
+String[] files = new String[] { "India.txt", "Brazil.txt","Bolivia.txt","Tanzania.txt","Kenya.txt","Nepal.txt","Vietnam.txt","Laos.txt" };
 void initWindows() {
   InfoWindow newWindow = null;
   int i = 0;
@@ -185,4 +208,12 @@ void initWindows() {
 
 public Point rToN( RPoint r ) {
   return new Point( r.x, r.y );
+}
+
+public void openUnicef() {
+    try {
+        Desktop.getDesktop().browse(new URL( "http://www.unicef.fi" ).toURI());
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 }
