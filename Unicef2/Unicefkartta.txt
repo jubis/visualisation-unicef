@@ -1,0 +1,2 @@
+Unicef -kartta
+Tämä kartta kertoo Unicefin toiminnasta eri maissa. Keltaisella värjätyt maat ovat Unicefin Lasten rahaston kohdemaita, eli ne maat, joihin muun muassa kuukausilahjoitukset Suomesta menevät. Pinkillä värjätyt maat ovat taas maita, joissa Suomen Unicefilla on oma nimikko-ohjelmansa. Klikkaamalla maata saat lisätietoa nimikko-ohjelmasta tai Suomea klikkaamalla voit tutustua varainhankinnan lähteisiin. Nimikko-ohjelmien ja kuukausilahjoitusten lisäksi Unicef käytti 8% keräysrahoista kotimaantyöhön ja 4% hätäapuun.
