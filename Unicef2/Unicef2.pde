@@ -13,8 +13,9 @@ List<String> highlights = new ArrayList<String>();
 List<String> specials = new ArrayList<String>();
 HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
 InfoWindow helpWindow;
+InfoWindow finlandWindow;
 
-ArrayList<String> workList = new ArrayList<String>();
+//ArrayList<String> workList = new ArrayList<String>();
 
 void setup() {
   RG.init(this);
@@ -99,13 +100,13 @@ void draw() {
     RG.shape( child );
   }
   
+  image(logo, 1070, 30, 100, 90);
   
   for( Map.Entry window : windows.entrySet() ) {
     ((InfoWindow)window.getValue()).draw();
   }
   helpWindow.draw();
   
-  image(logo, 1070, 30, 100, 90);
 }
 
 void mouseClicked() {
@@ -125,6 +126,9 @@ void mouseClicked() {
       if( child.name.equals( "qm" ) ) {
         println( "question?" );
         helpWindow.toggleVisibility();
+      }
+      if( child.name.equals("path10146") ) {
+        finlandWindow.toggleVisibility();
       }
     } 
   }
