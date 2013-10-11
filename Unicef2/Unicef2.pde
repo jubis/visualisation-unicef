@@ -15,6 +15,8 @@ HashMap<String,InfoWindow> windows = new HashMap<String,InfoWindow>();
 InfoWindow helpWindow;
 InfoWindow finlandWindow;
 
+final String finland = "path10146";
+
 //ArrayList<String> workList = new ArrayList<String>();
 
 void setup() {
@@ -27,7 +29,6 @@ void setup() {
   s2 = s.getChild( "layer3" ).getChild( "path8070" );
   sea = s.getChild( "layer2" );
   land = s.getChild( "layer3" );
-  land.addChild(  );
   RG.ignoreStyles();
   
   RShape qM = new RShape( new RPath( new RPoint[] { new RPoint( 30, windowSize.y-90 ),
@@ -39,6 +40,9 @@ void setup() {
   land.addChild( qM );
   helpWindow = new InfoWindow( new Point( 60, windowSize.y - 60 ), 300, 300 );
   helpWindow.toggleVisibility();
+  
+  finlandWindow = new FinlandInfo( rToN( land.getChild( finland ).getCentroid() ) );
+  finlandWindow.toggleVisibility();
   
   //ArrayList<Cube> cubes = new ArrayList<Cube>(); 
   //cubes.add( new Cube(3,185,6,10) );
@@ -106,7 +110,7 @@ void draw() {
     ((InfoWindow)window.getValue()).draw();
   }
   helpWindow.draw();
-  
+  finlandWindow.draw();
 }
 
 void mouseClicked() {
@@ -127,7 +131,7 @@ void mouseClicked() {
         println( "question?" );
         helpWindow.toggleVisibility();
       }
-      if( child.name.equals("path10146") ) {
+      if( child.name.equals( finland ) ) {
         finlandWindow.toggleVisibility();
       }
     } 
@@ -157,16 +161,23 @@ void initHighs() {
   //highlights.add( "path8426" );
 }
 
-void initSpecials() {
-  specials = Arrays.asList( new String[] { "path10948","path8314","path8200","path10890","path12352","path8224","path12276","path9060","path11962","path8342"});
+void initSpecials() {//,"path8342"
+  specials = Arrays.asList( new String[] { "path10948","path8314","path8200","path10890","path12352","path8224","path12276","path9060","path11962"});
 }
 
+String[] files = new String[] { "India.txt", "Brazil.txt","Bolivia.txt","Tanzania.txt","Brazil.txt","Kenya.txt","Nepal.txt","Vietnam.txt","Laos.txt" };
 void initWindows() {
   InfoWindow newWindow = null;
+  int i = 0;
   for( String shape : specials ) {
     RPoint center = land.getChild( shape ).getCentroid();
-    newWindow = new CountryInfo( new Point( center.x, center.y ), shape );
+    newWindow = new CountryInfo( new Point( center.x, center.y ), files[i] );
     windows.put( shape, newWindow );
     newWindow.visible = false;
+    i++;
   }
+}
+
+public Point rToN( RPoint r ) {
+  return new Point( r.x, r.y );
 }

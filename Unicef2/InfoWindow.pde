@@ -39,17 +39,17 @@ class InfoWindow {
   /** Checks if the infowindow fits inside the main window (x-coordinates) and turns
   the infowindow the other way round if necessary.*/
   
-  if(this.clickedX > windowSize.x-this.widthOfWindow-this.widthOfTriangle) {
-     this.beginningOfRectangleX = this.clickedX-this.widthOfWindow-this.widthOfTriangle;
-     this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
-  } else {
-    this.beginningOfRectangleX = this.clickedX+this.widthOfTriangle;
-    this.topCornerOfTriangleX = this.beginningOfRectangleX;
+    if(this.clickedX > windowSize.x-this.widthOfWindow-this.widthOfTriangle) {
+       this.beginningOfRectangleX = this.clickedX-this.widthOfWindow-this.widthOfTriangle;
+       this.topCornerOfTriangleX = this.clickedX-this.widthOfTriangle;
+    } else {
+      this.beginningOfRectangleX = this.clickedX+this.widthOfTriangle;
+      this.topCornerOfTriangleX = this.beginningOfRectangleX;
+    }
   }
-}
     
   
-  boolean draw() {
+  public boolean draw() {
     if(this.visible) {
       //println( "draw infowindow" + this.clickedX + " | " + this.clickedY + "size: x= " + this.widthOfWindow + " y= " + this.heightOfWindow );
       //println(beginningOfRectangleX + " | " + beginningOfRectangleY);
@@ -65,6 +65,7 @@ class InfoWindow {
   
   public void toggleVisibility() {
     this.visible = !this.visible;
+    println( "toggle" );
   }
   
 }
