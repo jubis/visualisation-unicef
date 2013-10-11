@@ -65,6 +65,9 @@ class InfoWindow {
   
   public void toggleVisibility() {
     this.visible = !this.visible;
+    if( this.visible ) {
+      windowOpen = this;
+    }
     println( "toggle" );
   }
   

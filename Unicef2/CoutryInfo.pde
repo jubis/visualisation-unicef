@@ -5,7 +5,7 @@ class CountryInfo extends InfoWindow {
   private Country country;
   
   public CountryInfo( Point start, String filename ) {
-    super( start, 450, 300 );
+    super( start, 450, 320 );
     this.country = new Country( filename );
     this.pie = new PieChart( this.country.sectors,
                              this.country.descs,
@@ -23,11 +23,13 @@ class CountryInfo extends InfoWindow {
             this.beginningOfRectangleX + this.widthOfWindow/2 - textWidth( this.country.title )/2, 
             this.beginningOfRectangleY + this.hSize + this.padding );
       textSize( 12 );
+      
+      int sects = this.country.sectors.length;
       text( this.country.text,
             this.beginningOfRectangleX + this.padding,
-            this.beginningOfRectangleY + this.padding*3 + 110,
+            this.beginningOfRectangleY + this.padding*3 + 110 + ((sects > 4)?( this.country.sectors.length - 4 ) * 20 : 0),
             this.widthOfWindow - this.padding*2,
-            200 );
+            220 );
       return true;
     }
     else {

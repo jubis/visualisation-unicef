@@ -3,18 +3,25 @@ class QMInfo extends InfoWindow {
   private final String filename = "Unicefkartta.txt";
   
   public QMInfo( Point start ) {
-    super( start, 300, 300 );
+    super( start, 500, 350 );
   }
   
   public boolean draw() {
     if( super.draw() ) {
-      String text = loadStrings( this.filename )[0];
+      String[] content = loadStrings( this.filename );
+      String head = content[0];
+      String body = content[1];
       fill( 0 );
-      stroke( 1 );
-      text( text, 
+      stroke( 0 );
+      textSize( 30 );
+      text( head, 
             this.beginningOfRectangleX + this.padding, 
-            this.beginningOfRectangleY + this.padding,
-            this.widthOfWindow - this.padding*2,
+            this.beginningOfRectangleY + this.padding/2 + 30 );
+      textSize( 15 );
+      text( body, 
+            this.beginningOfRectangleX + this.padding, 
+            this.beginningOfRectangleY + this.padding*1.5 + 30,
+            this.widthOfWindow - this.padding*3,
             this.heightOfWindow - this.padding*2 );
       return true;
     } else {
