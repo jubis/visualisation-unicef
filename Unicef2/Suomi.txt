@@ -1,0 +1,4 @@
+Suomi
+58,7,1,9,6,9
+Kuukausilahjoitukset,Koulukampanjat,Jano-keräys,Muut yksityishenkilöiden lahjoitukset,Unicef tuotteiden myynti,Yritysyhteistyö
+Vuonna 2012 Suomen Unicef keräsi 18,5 miljoonaa euroa yllä olevan taulukon mukaisesti. Tämän lisäksi Opetus- ja kulttuuriministeriö lahjoittivat kotimaantyöhön 242 000€.

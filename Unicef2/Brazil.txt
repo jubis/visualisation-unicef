@@ -1,4 +1,4 @@
 Brasilia
-
-
+4.2,17.2,78.6
+Äärimmäisessä köyhyydessä elävät,Köyhyydessä elävät,Köyhyysrajan yläpuolella elävät
 Brasilian Rio de Janeiro on sijaintinsa vuoksi erittäin altis tulville ja mutavyöryille. Ohjelman tarkoituksena on kartuttaa köyhillä asuinalueilla asuvien lasten ja nuorten osaamista ympäristöriskeistä, jotta nuoret pystyvät paremmin arvioimaan ja ennakoimaan asuinalueensa riskejä ja näin edistämään yhteisöjensä turvallisuutta.
